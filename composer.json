@@ -1,5 +1,5 @@
 {
-    "name": "ReadCode/MasterPackage",
+    "name": "red-code/master-package",
     "description": "master package",
     "keywords": [
         "ReadCode",
@@ -9,9 +9,10 @@
         "AmrSaidam",
         "KhalidSabbah",
         "Base",
-        "security"
+        "security",
+        "core-package",
+        "package"
     ],
-    "homepage": "https://github.com/spatie/laravel-permission",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +23,7 @@
         },
         {
             "name": "Khalid Sabbah",
-            "email": "amr.saidam.94@gmail.com",
+            "email": "khalidsami.se@gmail.com",
             "homepage": "",
             "role": "Developer"
         }
