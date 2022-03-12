@@ -73,6 +73,6 @@ class Resource extends \MP\Base\Http\Resources\Resource
 Resource object returns the result of `toArray($request)` for all undefined called method, otherwise it returns the result of defined called methods
 
 ### Recommendation
-We recommend you to use [LModular](https://github.com/PShadowClone/LModular) if you want to get the benefits of the auto dependency injection which is the way that the library use to detect *Resource, **Repository, **Request, and **Model* automatically
-by creating the package with the same structure that the [LModular](https://github.com/PShadowClone/LModular) does, and naming all previous classes with the same name of the *Model* class.
+We recommend you to use [LModular](https://github.com/PShadowClone/LModular) if you want to get the benefits of the auto dependency injection which is the way that the library use to detect **Resource**, **Repository**, **Request**, and **Model** automatically
+by creating the package with the same structure that the [LModular](https://github.com/PShadowClone/LModular) does, and naming all previous classes with the same name of the **Model** class.
 
