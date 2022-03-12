@@ -18,7 +18,7 @@ then you should publish library's config file by typing the following command
 $ php artisan vendor:publish --provider=MP\Base\MasterPackageServiceProvider
 ```
 
-### Request Follow
+### Request Flow
 Route -> Controller -> Request -> Controller's method -> Repository's method -> Resource -> Back to controller's method
 
 ### How to use
