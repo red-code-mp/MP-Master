@@ -59,7 +59,7 @@ Repository class calls Resource `serializeFor{repository'sMethod}` method automa
 ```sh
 $this->collection($data, $isList = false, $name = null) 
 ```
-to call the resource's method, so you can customize the returned data easily.
+to call the resource's method, so you can customize the returned data easily
 #####Note:
   - You can call any method from Resource even if that method does not have `serializeFor{repository'sMethod}` name by passing its name as a third parameter of collection method. 
   - Guess what, you can customize the data attribute of Pagination Object easily without any further complexity, by passing PaginationObject to the collection method and mark it as a list by passing true value to the second parameter of the same collection method
@@ -69,7 +69,7 @@ class Resource extends \MP\Base\Http\Resources\Resource
 {
 }
 ```
-Resource object returns the result of `toArray($request)` for all undefined called method, otherwise it returns the result of defined called methods.
+Resource object returns the result of `toArray($request)` for all undefined called method, otherwise it returns the result of defined called methods
 ###Recommendation
 We recommend you to use [LModular](https://github.com/PShadowClone/LModular) if you want to get the benefits of the auto dependency injection which is the way that the library use to detect *Resource, **Repository, **Request, and **Model* automatically
 by creating the package with the same structure that the [LModular](https://github.com/PShadowClone/LModular) does, and naming all previous classes with the same name of the *Model* class.
