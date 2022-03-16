@@ -1,5 +1,5 @@
 ### Introduction
-Time of development is developers' main concern, which they always try to decrease when involved in any project. So,  this package helps them finish their takes fast and easily by using shortening - time pre-defined method having the ability to end all service processes in the blink of an eye.
+Time of development is developers' main concern, which they always try to decrease when involved in any project. So,  this package helps them finish their takes fast and easily by using time-shortening pre-defined method having the ability to end all service processes in the blink of an eye.
 </br>
 As we know, Design patterns represent the best practice that the developers use to solve the general problems 
 that they face during software development, so in this library, we use a Repository pattern to implement all API functionality whether they were simple CRUD or even complex ones
