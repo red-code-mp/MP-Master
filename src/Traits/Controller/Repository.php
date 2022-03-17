@@ -23,7 +23,7 @@ trait Repository
     function getRepository()
     {
         if ($this->repository !== \MP\Base\Repositories\Repository::class && $this->repository != null)
-            return $this->repository;
+            return new $this->repository();
         $class = $this->__predicateRepository();
         return new $class();
     }

@@ -14,16 +14,6 @@ trait Init
      */
     public function __construct()
     {
-        $this->prepareMiddleware();
         $this->bindRequest();
-    }
-
-    /**
-     * @author khalid
-     * transaction  middleware
-     */
-    public function prepareMiddleware()
-    {
-        $model = $this->getRepository()->__getModelClass();
     }
 }
