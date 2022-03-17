@@ -61,7 +61,6 @@ trait Update
      */
     function updateRelation($request, $model)
     {
-        return $this->storeRelation($request, $model);
-
+        return $this->storeRelation($request, $model , true);
     }
 }

@@ -62,18 +62,29 @@ trait Request
      */
     protected function getRelationRequestAttributes(\Illuminate\Http\Request $request, $relationData, $relationName)
     {
-        $result = collect($relationData)->map(function ($relation) use ($request, $relationName) {
-            if (isset($relation['id']))
-                unset($relation['id']);
-            $relation['user_id'] = $request->input('user_id');
-            $relation = $this->getSingleRelationAttributes($request, $relation, $relationName);
-            return $relation;
-        });
         try {
-            $result = $this->{$relationName . "RelationAttributes"}($request, $result);
+            return  $this->{'get'.ucfirst($relationName) . "RelationAttributes"}($request, $relationData);
         } catch (\Exception $exception) {
+            $request->route()->forgetParameter('id');
+            if(array_is_list($relationData))
+                return collect($relationData)->map(function($data) use($request){
+                    return $this->mergeRouteParameterWithRelation($request , $data);
+                })->toArray();
+            else
+                return $this->mergeRouteParameterWithRelation($request , $relationData);
         }
-        return $result;
+
+    }
+
+    /**
+     * merge route's parameter with the data of relation
+     *
+     * @param $request
+     * @param $data
+     * @return array
+     */
+    protected function mergeRouteParameterWithRelation($request , $data){
+        return array_merge($data , $request->route()->parameters() );
     }
 
     /**

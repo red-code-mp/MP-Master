@@ -80,3 +80,27 @@ if (!function_exists('base_name')) {
         return end($base);
     }
 }
+
+if(!function_exists('array_is_list')){
+    /**
+     * this function checks whether the given array
+     * is a collection of arrays or not
+     *
+     * this function is already implemented in php8, so
+     * I've re-implemented it to make sure that the functionalities of
+     * this package work on fine with other php versions.
+     *
+     * @doc https://www.php.net/manual/en/function.array-is-list.php
+     * @param $array
+     * @return bool
+     */
+    function array_is_list($array){
+        $i = 0;
+        foreach ($array as $k => $v) {
+            if ($k !== $i++) {
+                return false;
+            }
+        }
+        return true;
+    }
+}

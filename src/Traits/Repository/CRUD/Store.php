@@ -37,15 +37,21 @@ trait Store
      * @return mixed
      * @author Amr
      */
-    function storeRelation($request, $model)
+    function storeRelation($request, $model , $resetRelation = false)
     {
-        collect($this->getRelation())->each(function ($value, $key) use ($request, $model) {
+        collect($this->getRelation())->each(function ($value, $key) use ($request, $model , $resetRelation) {
+
             if (!array_key_exists($key,$request->all()))
                 return true;
-            $model->{$value}()->delete();
+            if($resetRelation)
+                $model->{$value}()->delete();
             $model->refresh();
             $data = $this->getRelationRequestAttributes($request, $request->input($key), $value);
-            $model->{$value}()->createMany($data);
+            if(!array_is_list($data))
+                $relationData[] = $data;
+            else
+                $relationData = $data;
+            $model->{$value}()->createMany($relationData);
         });
     }
 }
