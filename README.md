@@ -76,7 +76,6 @@ Resource object returns the result of `toArray($request)` for all undefined call
 We recommend you to use [LModular](https://github.com/PShadowClone/LModular) if you want to get the benefits of the auto dependency injection which is the way that the library use to detect **Resource**, **Repository**, **Request**, and **Model** automatically
 by creating the package with the same structure that the [LModular](https://github.com/PShadowClone/LModular) does, and naming all previous classes with the same name of the **Model** class.
 
-### testing
 ### Contact 
  - [Amr Saidam](mailto:amr.saidam.94@gmail.com)
  - [Khalid Sabbah](mailto:khalidsami.se@gmail.com)
